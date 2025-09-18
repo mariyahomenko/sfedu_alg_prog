@@ -1,0 +1,33 @@
+import math
+
+#ряд тейлора
+def exponenta(x,y=20):
+    a = 0.0
+    b = 1.0
+    for i in range(1,y+1):
+        a += b
+        b *= x / i
+    return a
+
+#lg
+lnx=math.log(10)
+
+#5^10
+p510 = 1
+for i in range(10):
+    p510 *= 5
+
+#первое слагаемое
+first = 2 / lnx*p510
+
+#вычисление экспоненты
+exp1 = exponenta(1)
+exp2 = exponenta(-1)
+
+#sinh
+second = (exp1 - exp2) / 2
+
+y = first + second
+
+print('1.', f'{y:.3f}')
+print('2.', f'{y:.3e}')
