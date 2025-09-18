@@ -1,0 +1,27 @@
+import math
+
+x = int(input('Введите x(R): '))
+#ряд тейлора
+def exponenta(x,y=20):
+    a = 0.0
+    b = 1.0
+    for i in range(1,y+1):
+        a += b
+        b *= x / i
+    return a
+
+#ln|x|
+first = math.log(abs(x))
+
+#log5(x)
+second = math.log(x) / math.log(5)
+
+#ch
+exp1 = exponenta(2)
+exp2 = exponenta(-2)
+third = (exp1 + exp2) / 2
+
+y = first + second - third
+
+print('1.', f'{y:.3f}')
+print('2.', f'{y:.3e}')
