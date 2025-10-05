@@ -33,7 +33,7 @@ binary = "10110"
 decimal = 0
 for i, digit in enumerate(reversed(binary)):
     decimal += int(digit) * (2 ** i)
-print("Результат цикла: {decimal}")
+print(f"Результат цикла: {decimal}")
 
 # ad₁₆ = a×16¹ + d×16⁰ = 10×16 + 13×1 (a=10, b=11, c=12, d=13)
 result = 10*(16**1) + 13*(16**0)
